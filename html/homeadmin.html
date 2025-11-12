@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel del Administrador | Plataforma ABC</title>
+  <link rel="stylesheet" href="../css/homeadmin.css" />
+</head>
+<body>
+  <header>
+    <h1>Panel del Administrador</h1>
+    <p>Gestión de estudiantes, cursos y módulos</p>
+  </header>
+
+  <main class="panel-container">
+    <!-- === AGREGAR ESTUDIANTE === -->
+    <section class="card">
+      <h2>Agregar Estudiante</h2>
+      <form id="addStudentForm">
+        <label for="studentEmail">Correo:</label>
+        <input type="email" id="studentEmail" required placeholder="Correo del estudiante" />
+
+        <label for="studentPassword">Contraseña:</label>
+        <input type="password" id="studentPassword" required placeholder="Contraseña" />
+
+        <button type="submit">Agregar Estudiante</button>
+        <p class="msg" id="studentMsg"></p>
+      </form>
+    </section>
+
+    <!-- === AGREGAR CURSO === -->
+    <section class="card">
+      <h2>Agregar Curso</h2>
+      <form id="addCourseForm">
+        <label for="courseName">Nombre del curso:</label>
+        <input type="text" id="courseName" required placeholder="Ejemplo: Matemáticas" />
+
+        <label for="courseDesc">Descripción:</label>
+        <textarea id="courseDesc" rows="3" required placeholder="Descripción breve..."></textarea>
+
+        <button type="submit">Agregar Curso</button>
+        <p class="msg" id="courseMsg"></p>
+      </form>
+    </section>
+
+    <!-- === AGREGAR MÓDULO Y LECCIÓN === -->
+    <section class="card">
+      <h2>Agregar Módulo y Lección</h2>
+      <form id="addModuleForm">
+        <label for="moduleName">Nombre del módulo:</label>
+        <input type="text" id="moduleName" required placeholder="Ejemplo: Álgebra" />
+
+        <label for="lessonName">Lección:</label>
+        <input type="text" id="lessonName" required placeholder="Ejemplo: Ecuaciones básicas" />
+
+        <button type="submit">Agregar Módulo</button>
+        <p class="msg" id="moduleMsg"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/homeadmin.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Estudiante | Plataforma ABC</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <main class="login-container">
+    <h1>Inicio de Sesión - Estudiante</h1>
+
+    <form id="studentForm" class="login-form">
+      <label for="studentEmail">Correo electrónico:</label>
+      <input type="email" id="studentEmail" placeholder="Ingresa tu correo" required>
+
+      <label for="studentPassword">Contraseña:</label>
+      <input type="password" id="studentPassword" placeholder="Ingresa tu contraseña" required>
+
+      <button type="submit">Iniciar sesión</button>
+
+      <p id="error" class="error"></p>
+    </form>
+
+    <div class="back-option">
+      <a href="loginadmin.html">¿Eres administrador? Inicia sesión aquí</a>
+    </div>
+  </main>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

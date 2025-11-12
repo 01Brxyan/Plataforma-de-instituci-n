@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Estudiante | Plataforma ABC</title>
+  <link rel="stylesheet" href="../css/homeestudiante.css">
+</head>
+<body>
+  <main class="home-container">
+    <section class="perfil">
+      <div class="perfil-foto">
+        <img id="profile-img" src="../assets/images/predeterminado.png" alt="Foto de perfil">
+        <label for="upload-img" class="change-photo">Cambiar foto</label>
+        <input type="file" id="upload-img" accept="image/*" hidden>
+      </div>
+      <div class="perfil-info">
+        <h2 id="student-email">Hola, Estudiante</h2>
+        <button id="logout" class="logout-btn">Cerrar sesión</button>
+      </div>
+    </section>
+
+    <section class="opciones">
+      <div class="card" id="go-cursos">
+        <img src="../assets/images/cursos.jpg" alt="Cursos">
+        <h3>Cursos</h3>
+        <p>Consulta tus cursos activos y su contenido.</p>
+      </div>
+
+      <div class="card" id="go-profesores">
+        <img src="../assets/images/profesor.jpg" alt="Profesores">
+        <h3>Profesores</h3>
+        <p>Conoce a los docentes y su información de contacto.</p>
+      </div>
+
+      <div class="card" id="go-administrativos">
+        <img src="../assets/images/administrativos.jpg" alt="Administrativos">
+        <h3>Administrativos</h3>
+        <p>Accede a la información del personal administrativo.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/homeestudiante.js"></script>
+</body>
+</html>
