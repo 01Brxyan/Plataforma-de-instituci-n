@@ -1,32 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PLATAFORMA ABC</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página de Inicio - Institución ABC</title>
+  <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
+  <div id="app">
+    <!-- Página de inicio -->
     <header>
-        <h1> PLATAFORMA ABC</h1>
-        <nav>
-            <ul>
-                <li><a href="./html/home.html" id="homeLink">Inicio</a></li>
-                <li><a href="./html/cursos.html" id="cursosLink">Cursos</a></li>
-                <li><a href="./html/login.html" id="loginLink">Login</a></li>
-            </ul>
-        </nav>
+      <h1>Institución Educativa ABC</h1>
+      <nav>
+        <a href="#" id="home-link">Inicio</a>
+        <a href="./html/login.html" id="login-link">Ingresar</a>
+      </nav>
     </header>
 
     <main>
-        <div id="app"></div>
+      <section class="hero">
+        <h2>Bienvenido a nuestra plataforma educativa</h2>
+        <p>Accede a contenidos, clases y herramientas para mejorar tu aprendizaje.</p>
+        <img src="./assets/images/estudiantes.jpg" alt="Estudiantes aprendiendo">
+      </section>
+
+      <section class="features">
+        <h3>Lo que ofrecemos</h3>
+        <div class="cards">
+          <article>
+            <img src="./assets/images/cursos.jpg" alt="Cursos">
+            <h4>Cursos en línea</h4>
+            <p>Cursos los cuales te ayudaran a seguir mejorando diariamente.</p>
+          </article>
+          <article>
+            <img src="./assets/images/profesores.jpg" alt="Docentes">
+            <h4>Docentes expertos</h4>
+            <p>Profesores expertos en los temas, los cuales estan dispuestos a ayudarte en todo momento.</p>
+          </article>
+          <article>
+            <img src="./assets/images/estudiantes1.jpg" alt="Comunidad">
+            <h4>Comunidad activa</h4>
+            <p>Participa en foros, eventos y proyectos colaborativos.</p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>© 2025 PLATAFORMA ABC - Todos los derechos reservados</p>
-        <p>Desarrollador: Brayan Castro</p>
+      <p>© 2025 Institución Educativa ABC — Todos los derechos reservados.</p>
+      <p>Desarrollador: Brayan Castro</p>
     </footer>
-  <div id="inicio"></div>
-  <script src="./js/app.js"></script>
+  </div>
+
+  <script src="./js/home.js"></script>
 </body>
 </html>
