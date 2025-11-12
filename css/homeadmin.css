@@ -1,0 +1,94 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f6fa;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background: #0b5cff;
+  color: white;
+  padding: 1.5rem 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #e3e6ef;
+}
+
+.panel-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  text-align: left;
+}
+
+.card h2 {
+  text-align: center;
+  color: #0b5cff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-top: 0.7rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  width: 100%;
+  background-color: #0b5cff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0847c7;
+}
+
+.msg {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: center;
+  min-height: 18px;
+}
+

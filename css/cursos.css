@@ -1,0 +1,95 @@
+/* ==== Estilos para la página de Cursos ==== */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f6fa;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #0b5cff;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.header button {
+  background-color: white;
+  color: #0b5cff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.header button:hover {
+  background-color: #e8e8e8;
+}
+
+/* Contenedor de cursos */
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Tarjeta de curso */
+.course-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.course-card h2 {
+  color: #0b5cff;
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.modules-list {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 1rem;
+  background: #f1f3f8;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+
+.modules-list li {
+  margin-bottom: 5px;
+  list-style: "📘 ";
+}
