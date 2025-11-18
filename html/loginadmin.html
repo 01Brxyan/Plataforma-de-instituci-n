@@ -3,29 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Administrador | Plataforma ABC</title>
+  <title>Login Administrador | EduPlatform</title>
   <link rel="stylesheet" href="../css/loginadmin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <main class="login-container">
-    <h1>Acceso de Administrador</h1>
 
-    <form id="adminForm" class="login-form">
-      <label for="adminUser">Usuario:</label>
-      <input type="email" id="adminUser" placeholder="Ingresa tu correo" required>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="logo">
+        <i class="fas fa-user-shield"></i>
+        <h1>ABC<span></span></h1>
+      </div>
 
-      <label for="adminPass">Contraseña:</label>
-      <input type="password" id="adminPass" placeholder="Ingresa tu contraseña" required>
+      <h2>Panel Administrador</h2>
+      <p class="subtitle">Ingresa tus credenciales de administrador</p>
 
-      <button type="submit">Iniciar sesión</button>
+      <form id="form-admin">
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email-admin" placeholder="Correo administrador" required>
+        </div>
 
-      <p id="error" class="error"></p>
-    </form>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="pass-admin" placeholder="Contraseña" required>
+        </div>
 
-    <div class="back-option">
-      <a href="login.html">¿Eres estudiante? Inicia sesión aquí</a>
+        <button type="submit" class="btn-login">
+          <i class="fas fa-sign-in-alt"></i>
+          Ingresar como Administrador
+        </button>
+      </form>
+
+      <div class="footer-links">
+        <a href="../index.html">Volver al inicio</a>
+      </div>
     </div>
-  </main>
+  </div>
 
   <script src="../js/loginadmin.js"></script>
 </body>

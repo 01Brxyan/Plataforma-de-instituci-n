@@ -2,63 +2,140 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel del Administrador | Plataforma ABC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Administrador - EduPlatform</title>
   <link rel="stylesheet" href="../css/homeadmin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-  <header>
-    <h1>Panel del Administrador</h1>
-    <p>Gestión de estudiantes, cursos y módulos</p>
+
+  <header class="header">
+    <h1>Panel de Administrador</h1>
+    <button onclick="location.href='index.html'" class="btn-salir">Salir</button>
   </header>
 
-  <main class="panel-container">
-    <!-- === AGREGAR ESTUDIANTE === -->
-    <section class="card">
-      <h2>Agregar Estudiante</h2>
-      <form id="addStudentForm">
-        <label for="studentEmail">Correo:</label>
-        <input type="email" id="studentEmail" required placeholder="Correo del estudiante" />
+  <div class="container">
 
-        <label for="studentPassword">Contraseña:</label>
-        <input type="password" id="studentPassword" required placeholder="Contraseña" />
+    <!-- Pestañas -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab-estudiantes">Estudiantes</button>
+      <button class="tab-btn" data-tab="tab-profesores">Profesores</button>
+      <button class="tab-btn" data-tab="tab-cursos">Cursos</button>
+      <button class="tab-btn" data-tab="tab-modulos">Módulos</button>
+      <button class="tab-btn" data-tab="tab-administradores">Administradores</button>
+    </div>
 
-        <button type="submit">Agregar Estudiante</button>
-        <p class="msg" id="studentMsg"></p>
-      </form>
-    </section>
+    <!-- Panel Estudiantes -->
+    <div id="tab-estudiantes" class="tab-panel active">
+      <div class="panel-header">
+        <h2>Gestión de Estudiantes</h2>
+        <button onclick="abrirModal('estudiante')" class="btn-nuevo">+ Nuevo Estudiante</button>
+      </div>
+      <div id="estudiantes-list" class="lista"></div>
+    </div>
 
-    <!-- === AGREGAR CURSO === -->
-    <section class="card">
-      <h2>Agregar Curso</h2>
-      <form id="addCourseForm">
-        <label for="courseName">Nombre del curso:</label>
-        <input type="text" id="courseName" required placeholder="Ejemplo: Matemáticas" />
+    <!-- Panel Profesores -->
+    <div id="tab-profesores" class="tab-panel">
+      <div class="panel-header">
+        <h2>Gestión de Profesores</h2>
+        <button onclick="abrirModal('profesor')" class="btn-nuevo">+ Nuevo Profesor</button>
+      </div>
+      <div id="profesores-list" class="lista"></div>
+    </div>
 
-        <label for="courseDesc">Descripción:</label>
-        <textarea id="courseDesc" rows="3" required placeholder="Descripción breve..."></textarea>
+    <!-- Panel Cursos -->
+    <div id="tab-cursos" class="tab-panel">
+      <div class="panel-header">
+        <h2>Gestión de Cursos</h2>
+        <button onclick="abrirModal('curso')" class="btn-nuevo">+ Nuevo Curso</button>
+      </div>
+      <div id="cursos-list" class="lista"></div>
+    </div>
 
-        <button type="submit">Agregar Curso</button>
-        <p class="msg" id="courseMsg"></p>
-      </form>
-    </section>
+    <!-- Panel Módulos -->
+    <div id="tab-modulos" class="tab-panel">
+      <div class="panel-header">
+        <h2>Gestión de Módulos y Lecciones</h2>
+        <button onclick="abrirModal('modulo')" class="btn-nuevo">+ Nuevo Módulo</button>
+      </div>
+      <div id="modulos-list" class="lista"></div>
+    </div>
 
-    <!-- === AGREGAR MÓDULO Y LECCIÓN === -->
-    <section class="card">
-      <h2>Agregar Módulo y Lección</h2>
-      <form id="addModuleForm">
-        <label for="moduleName">Nombre del módulo:</label>
-        <input type="text" id="moduleName" required placeholder="Ejemplo: Álgebra" />
+    <!-- NUEVO: Panel Administradores -->
+    <div id="tab-administradores" class="tab-panel">
+      <div class="panel-header">
+        <h2>Gestión de Administradores</h2>
+        <button onclick="abrirModal('admin')" class="btn-nuevo">+ Nuevo Administrador</button>
+      </div>
+      <div id="administradores-list" class="lista"></div>
+    </div>
 
-        <label for="lessonName">Lección:</label>
-        <input type="text" id="lessonName" required placeholder="Ejemplo: Ecuaciones básicas" />
+  </div>
 
-        <button type="submit">Agregar Módulo</button>
-        <p class="msg" id="moduleMsg"></p>
-      </form>
-    </section>
-  </main>
+  <!-- MODAL ÚNICO -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-title">Nuevo Elemento</h2>
+        <span class="close-modal">×</span>
+      </div>
 
-  <script src="../js/homeadmin.js"></script>
+      <!-- Formulario Estudiante -->
+      <div class="form-section">
+        <form id="form-estudiante">
+          <input type="hidden" id="estudiante-id">
+          <input type="text" id="nombre-estudiante" placeholder="Nombre" required>
+          <input type="text" id="apellido-estudiante" placeholder="Apellido">
+          <input type="email" id="email-estudiante" placeholder="Email" required>
+          <button type="submit" class="btn-guardar">Guardar Estudiante</button>
+        </form>
+      </div>
+
+      <!-- Formulario Profesor -->
+      <div class="form-section" style="display:none">
+        <form id="form-profesor">
+          <input type="hidden" id="profesor-id">
+          <input type="text" id="nombre-profesor" placeholder="Nombre completo" required>
+          <input type="email" id="email-profesor" placeholder="Email">
+          <input type="file" id="foto-profesor" accept="image/*">
+          <select id="cursos-profesor" multiple size="5"></select>
+          <small>Ctrl+Clic para seleccionar varios cursos</small><br><br>
+          <button type="submit" class="btn-guardar">Guardar Profesor</button>
+        </form>
+      </div>
+
+      <!-- Formulario Curso -->
+      <div class="form-section" style="display:none">
+        <form id="form-curso">
+          <input type="hidden" id="curso-id">
+          <input type="text" id="nombre-curso" placeholder="Nombre del curso" required>
+          <textarea id="descripcion-curso" placeholder="Descripción (opcional)"></textarea>
+          <button type="submit" class="btn-guardar">Guardar Curso</button>
+        </form>
+      </div>
+
+      <!-- Formulario Módulo -->
+      <div class="form-section" style="display:none">
+        <form id="form-modulo">
+          <input type="hidden" id="modulo-id">
+          <input type="text" id="nombre-modulo" placeholder="Nombre del módulo" required>
+          <select id="curso-modulo" required></select>
+          <button type="submit" class="btn-guardar">Guardar Módulo</button>
+        </form>
+      </div>
+
+      <!-- NUEVO: Formulario Administrador -->
+      <div class="form-section" style="display:none">
+        <form id="form-admin">
+          <input type="hidden" id="admin-id">
+          <input type="text" id="nombre-admin" placeholder="Nombre completo" required>
+          <input type="email" id="email-admin" placeholder="Correo electrónico" required>
+          <button type="submit" class="btn-guardar">Guardar Administrador</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/homeadmin.js" defer></script>
 </body>
 </html>

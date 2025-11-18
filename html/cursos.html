@@ -3,20 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursos | Plataforma ABC</title>
+  <title>Mis Cursos | ABCPlatform</title>
   <link rel="stylesheet" href="../css/cursos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header class="header">
-    <h1>Cursos disponibles</h1>
-    <button id="back-home">Volver al inicio</button>
-  </header>
 
-  <main class="main-content">
-    <section class="courses-container" id="courses-container">
-      <!-- Aquí se mostrarán los cursos -->
-    </section>
-  </main>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo"><i class="fas fa-graduation-cap"></i><h2>ABC<span>Platform</span></h2></div>
+    <nav class="menu">
+      <a href HTML href="homeestudiante.html"><i class="fas fa-home"></i><span>Inicio</span></a>
+      <a href="cursos.html" class="active"><i class="fas fa-book-open"></i><span>Mis Cursos</span></a>
+      <a href="profesores.html"><i class="fas fa-chalkboard-teacher"></i><span>Profesores</span></a>
+      <a href="administrativos.html"><i class="fas fa-user-shield"></i><span>Administradores</span></a>
+    </nav>
+    <button onclick="cerrarSesion()" class="btn-salir"><i class="fas fa-sign-out-alt"></i> Salir</button>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="main-content">
+    <header class="header">
+      <h1>Mis Cursos</h1>
+      <p id="total-cursos">Cargando cursos...</p>
+    </header>
+
+    <div id="lista-cursos" class="cursos-grid">
+      <!-- Aquí se cargan los cursos del administrador -->
+    </div>
+  </div>
 
   <script src="../js/cursos.js"></script>
 </body>

@@ -1,104 +1,134 @@
-:root {
-  --bg: #f5f6f8;
-  --card: #fff;
-  --accent: #0056ff;
-  --text: #222;
-  --muted: #555;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-header {
-  background: var(--card);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-header h1 {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-nav a {
-  margin-left: 16px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Inter', sans-serif; color:white; overflow-x:hidden; }
 
 .hero {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-
-.hero img {
-  width: 80%;
-  max-width: 600px;
-  margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.features {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.features h3 {
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-}
-
-.cards {
+  position: relative;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-}
-
-.cards article {
-  background: var(--card);
-  width: 280px;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.cards img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.cards h4 {
-  margin: 12px 0 8px;
-}
-
-footer {
-  background: var(--card);
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('../assets/images/institucion.jpg') center/cover no-repeat; /* ← TU FOTO AQUÍ */
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+/* CAPA OSCURA*/
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 10, 20, 0.8);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  padding: 2rem;
+}
+
+.logo i { 
+  font-size: 4rem; 
+  background: linear-gradient(135deg, #5B3FFF, #00D4FF); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+.logo h1 { 
+  font-size: 5rem; 
+  font-weight: 800; 
+  background: linear-gradient(135deg, #5B3FFF, #00D4FF); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+
+.logo span { 
+  color: #00D4FF; 
+}
+
+.tagline { 
+  font-size: 2rem; 
+  margin: 1rem 0; 
+  font-weight: 300; 
+}
+
+.description { 
+  font-size: 1.4rem; 
+  margin: 2rem 0; 
+  opacity: 0.9; 
+}
+
+.description strong { 
+  color: #00D4FF; 
+}
+
+.botones {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.btn {
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.btn-estudiante {
+  background: linear-gradient(135deg, #5B3FFF, #00D4FF);
+  color: white;
+}
+.btn-estudiante:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 20px 40px rgba(91,63,255,0.6); 
+}
+
+.btn-admin {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 2px solid #5B3FFF;
+  backdrop-filter: blur(10px);
+}
+
+.btn-admin:hover { 
+  background: #5B3FFF; 
+  transform: translateY(-8px); 
+}
+
+/* ESTADÍSTICAS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: rgba(10,10,20,0.95);
+  text-align: center;
+}
+.stat i { font-size: 3rem; 
+  margin-bottom: 1rem; 
+  color: #00D4FF; 
+}
+
+.stat h3 { font-size: 2.5rem; 
+  font-weight: 800; 
+  color: #5B3FFF; 
+}
+.stat p { 
+  color: #8892b0; 
 }

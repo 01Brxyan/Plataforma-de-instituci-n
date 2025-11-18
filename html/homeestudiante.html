@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Estudiante | Plataforma ABC</title>
-  <link rel="stylesheet" href="../css/homeestudiante.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Estudiante | ABCPlatform</title>
+  <link rel="stylesheet" href="../css/homeestudiante.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-  <main class="home-container">
-    <section class="perfil">
-      <div class="perfil-foto">
-        <img id="profile-img" src="../assets/images/predeterminado.png" alt="Foto de perfil">
-        <label for="upload-img" class="change-photo">Cambiar foto</label>
-        <input type="file" id="upload-img" accept="image/*" hidden>
-      </div>
-      <div class="perfil-info">
-        <h2 id="student-email">Hola, Estudiante</h2>
-        <button id="logout" class="logout-btn">Cerrar sesión</button>
-      </div>
-    </section>
 
-    <section class="opciones">
-      <div class="card" id="go-cursos">
-        <img src="../assets/images/cursos.jpg" alt="Cursos">
-        <h3>Cursos</h3>
-        <p>Consulta tus cursos activos y su contenido.</p>
-      </div>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-graduation-cap"></i>
+      <h2>ABC<span>Platform</span></h2>
+    </div>
 
-      <div class="card" id="go-profesores">
-        <img src="../assets/images/profesor.jpg" alt="Profesores">
-        <h3>Profesores</h3>
-        <p>Conoce a los docentes y su información de contacto.</p>
-      </div>
+    <nav class="menu">
+      <a href="homeestudiante.html" class="menu-item active">
+        <i class="fas fa-home"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="cursos.html" class="menu-item">
+        <i class="fas fa-book-open"></i>
+        <span>Mis Cursos</span>
+      </a>
+      <a href="profesores.html" class="menu-item">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <span>Profesores</span>
+      </a>
+      <a href="administrativos.html" class="menu-item">
+        <i class="fas fa-user-shield"></i>
+        <span>Administradores</span>
+      </a>
+    </nav>
 
-      <div class="card" id="go-administrativos">
-        <img src="../assets/images/administrativos.jpg" alt="Administrativos">
-        <h3>Administrativos</h3>
-        <p>Accede a la información del personal administrativo.</p>
+    <div class="sidebar-bottom">
+      <button onclick="cerrarSesion()" class="btn-salir">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <header class="header">
+      <h1>¡Hola, <span id="nombre-estudiante">Estudiante</span>!</h1>
+      <div class="perfil">
+        <img id="foto-perfil" src="../assets/images/predeterminado.png" alt="Perfil" class="avatar">
       </div>
-    </section>
-  </main>
+    </header>
+
+    <div class="content">
+      <section class="welcome">
+        <h2>Bienvenido a tu plataforma de aprendizaje</h2>
+        <p>Selecciona una opción del menú para continuar</p>
+      </section>
+
+      <div class="quick-stats">
+        <div class="stat">
+          <i class="fas fa-book"></i>
+          <div>
+            <h3 id="total-cursos">0</h3>
+            <p>Cursos activos</p>
+          </div>
+        </div>
+        <div class="stat">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3 id="horas-estudio">0</h3>
+            <p>Horas estudiadas</p>
+          </div>
+        </div>
+        <div class="stat">
+          <i class="fas fa-star"></i>
+          <div>
+            <h3 id="progreso">0%</h3>
+            <p>Progreso general</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="../js/homeestudiante.js"></script>
 </body>

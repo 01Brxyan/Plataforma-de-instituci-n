@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Estudiante | Plataforma ABC</title>
-  <link rel="stylesheet" href="../css/login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABCPlatform | Iniciar Sesión</title>
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-  <main class="login-container">
-    <h1>Inicio de Sesión - Estudiante</h1>
 
-    <form id="studentForm" class="login-form">
-      <label for="studentEmail">Correo electrónico:</label>
-      <input type="email" id="studentEmail" placeholder="Ingresa tu correo" required>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <h1>ABC<span></span></h1>
+      </div>
 
-      <label for="studentPassword">Contraseña:</label>
-      <input type="password" id="studentPassword" placeholder="Ingresa tu contraseña" required>
+      <h2>Bienvenido de vuelta</h2>
+      <p class="subtitle">Ingresa tus credenciales para continuar aprendiendo</p>
 
-      <button type="submit">Iniciar sesión</button>
+      <!-- FORMULARIO CON ID EXACTO -->
+      <form id="form-login">
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" placeholder="Correo electrónico" required autocomplete="email">
+        </div>
 
-      <p id="error" class="error"></p>
-    </form>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" placeholder="Contraseña" required minlength="4">
+          <span class="toggle-password" onclick="togglePass()">
+            <i class="fas fa-eye"></i>
+          </span>
+        </div>
 
-    <div class="back-option">
-      <a href="loginadmin.html">¿Eres administrador? Inicia sesión aquí</a>
+        <button type="submit" class="btn-login">
+          <span>Iniciar Sesión como Estudiante</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <div class="divider"><span>o</span></div>
+
+      <a href="loginadmin.html" class="btn-admin">
+        <i class="fas fa-user-shield"></i>
+        Ingresar como Administrador
+      </a>
+
+      <p class="footer-text">Plataforma educativa © 2025</p>
     </div>
-  </main>
+  </div>
 
+  <!-- SCRIPT CORRECTO -->
   <script src="../js/login.js"></script>
 </body>
 </html>

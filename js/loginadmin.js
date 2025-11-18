@@ -1,28 +1,28 @@
-document.getElementById("adminForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Evita que se recargue la página
+// js/login-admin.js
+document.getElementById('form-admin').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  const user = document.getElementById("adminUser").value.trim();
-  const pass = document.getElementById("adminPass").value.trim();
-  const error = document.getElementById("error");
+    const email = document.getElementById('email-admin').value.trim();
+    const pass = document.getElementById('pass-admin').value;
 
-  
-  const adminUser = "a@gmail.com";
-  const adminPass = "a";
+    // CREDENCIALES DEL ADMIN (puedes cambiarlas después)
+    const adminValido = {
+        email: "a@gmail.com",
+        password: "a"
+    };
 
-  
-  if (user === adminUser && pass === adminPass) {
-    error.style.color = "green";
-    error.textContent = "Acceso concedido. Redirigiendo...";
+    if (email === adminValido.email && pass === adminValido.password) {
+        // Guardar sesión de administrador
+        const adminData = {
+            nombre: "Administrador",
+            email: email,
+            rol: "admin"
+        };
+        localStorage.setItem('adminLogueado', JSON.stringify(adminData));
 
-    
-    sessionStorage.setItem("adminLogged", "true");
-
-    
-    setTimeout(() => {
-      window.location.href = "homeadmin.html";
-    }, 1200); 
-  } else {
-    error.style.color = "red";
-    error.textContent = "Usuario o contraseña incorrectos.";
-  }
+        alert('Bienvenido, Administrador');
+        window.location.href = 'homeadmin.html'; // ← tu panel de admin
+    } else {
+        alert('Credenciales incorrectas');
+    }
 });

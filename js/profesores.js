@@ -1,33 +1,28 @@
-// Verificar si el estudiante está logueado
-const loggedUser = JSON.parse(localStorage.getItem("studentLogged"));
-if (!loggedUser || !loggedUser.email) {
-  window.location.href = "login.html";
-}
+// js/profesores.js → 100% LIMPIO, ENTRA DIRECTO, NUNCA PIDE NADA
+document.addEventListener('DOMContentLoaded', () => {
+    const profesores = JSON.parse(localStorage.getItem('eduPlatform_profesores')) || [];
+    const lista = document.getElementById('lista-profesores');
 
-// Botón para volver al home
-document.getElementById("back-home").addEventListener("click", () => {
-  window.location.href = "homeestudiante.html";
+    if (profesores.length === 0) {
+        lista.innerHTML = '<p class="no-data">No hay profesores registrados aún.</p>';
+        return;
+    }
+
+    lista.innerHTML = profesores.map(p => `
+        <div class="profesor-card">
+            <img src="${p.foto || '../assets/images/default-profesor.png'}" alt="${p.nombre}">
+            <div class="info">
+                <h3>${p.nombre} ${p.apellido || ''}</h3>
+                <p>${p.email || 'Sin correo'}</p>
+                <small>Cursos que dicta: ${p.cursos?.map(c => c.nombre).join(', ') || 'Ninguno'}</small>
+            </div>
+        </div>
+    `).join('');
 });
 
-// Obtener los cursos guardados por el administrador
-const courses = JSON.parse(localStorage.getItem("courses")) || [];
-const container = document.getElementById("courses-container");
-
-if (courses.length === 0) {
-  container.innerHTML = `<p class="no-courses">No hay cursos disponibles en este momento.</p>`;
-} else {
-  courses.forEach(course => {
-    const card = document.createElement("div");
-    card.classList.add("course-card");
-    card.innerHTML = `
-      <h2>${course.name}</h2>
-      <p>${course.description}</p>
-      ${
-        course.modules && course.modules.length > 0
-          ? `<ul class="modules-list">${course.modules.map(m => `<li>${m}</li>`).join("")}</ul>`
-          : "<p>No hay módulos registrados aún.</p>"
-      }
-    `;
-    container.appendChild(card);
-  });
+function cerrarSesion() {
+    if (confirm('¿Cerrar sesión?')) {
+        localStorage.removeItem('estudianteLogueado');
+        window.location.href = 'login.html';
+    }
 }

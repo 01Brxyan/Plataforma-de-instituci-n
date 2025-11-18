@@ -1,57 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página de Inicio - Institución ABC</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABCPlatform | Aprende sin límites</title>
   <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div id="app">
-    <!-- Página de inicio -->
-    <header>
-      <h1>Institución Educativa ABC</h1>
-      <nav>
-        <a href="#" id="home-link">Inicio</a>
-        <a href="./html/login.html" id="login-link">Ingresar</a>
-      </nav>
-    </header>
 
-    <main>
-      <section class="hero">
-        <h2>Bienvenido a nuestra plataforma educativa</h2>
-        <p>Accede a contenidos, clases y herramientas para mejorar tu aprendizaje.</p>
-        <img src="./assets/images/estudiantes.jpg" alt="Estudiantes aprendiendo">
-      </section>
+  <!-- HERO CON FOTO DE FONDO GRANDE -->
+  <section class="hero">
+    <!-- FONDO DE INSTITUCIÓN (cambia la URL por tu foto) -->
+    <div class="hero-bg"></div>
 
-      <section class="features">
-        <h3>Lo que ofrecemos</h3>
-        <div class="cards">
-          <article>
-            <img src="./assets/images/cursos.jpg" alt="Cursos">
-            <h4>Cursos en línea</h4>
-            <p>Cursos los cuales te ayudaran a seguir mejorando diariamente.</p>
-          </article>
-          <article>
-            <img src="./assets/images/profesores.jpg" alt="Docentes">
-            <h4>Docentes expertos</h4>
-            <p>Profesores expertos en los temas, los cuales estan dispuestos a ayudarte en todo momento.</p>
-          </article>
-          <article>
-            <img src="./assets/images/estudiantes1.jpg" alt="Comunidad">
-            <h4>Comunidad activa</h4>
-            <p>Participa en foros, eventos y proyectos colaborativos.</p>
-          </article>
-        </div>
-      </section>
-    </main>
+    <!-- CAPA OSCURA PARA QUE SE LEA EL TEXTO -->
+    <div class="overlay"></div>
 
-    <footer>
-      <p>© 2025 Institución Educativa ABC — Todos los derechos reservados.</p>
-      <p>Desarrollador: Brayan Castro</p>
-    </footer>
-  </div>
+    <div class="hero-content">
+      <div class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        <h1>ABC<span>Platform</span></h1>
+      </div>
 
-  <script src="./js/home.js"></script>
+      <p class="tagline">Formación profesional del futuro</p>
+      <p class="description">
+        Más de <strong id="total-cursos">50</strong> cursos • 
+        <strong id="total-profesores">30</strong> profesores expertos • 
+        <strong id="total-estudiantes">10.000+</strong> estudiantes activos
+      </p>
+
+      <div class="botones">
+        <a href="html/login.html" class="btn btn-estudiante">
+          <i class="fas fa-user-graduate"></i>
+          Entrar como Estudiante
+        </a>
+        <a href="html/loginadmin.html" class="btn btn-admin">
+          <i class="fas fa-user-shield"></i>
+          Panel Administrador
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTADÍSTICAS RÁPIDAS (OPCIONAL) -->
+  <section class="stats">
+    <div class="stat">
+      <i class="fas fa-book-open"></i>
+      <h3 id="stat-cursos">50+</h3>
+      <p>Cursos disponibles</p>
+    </div>
+    <div class="stat">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h3 id="stat-profes">30+</h3>
+      <p>Profesores expertos</p>
+    </div>
+    <div class="stat">
+      <i class="fas fa-certificate"></i>
+      <h3 id="stat-cert">100%</h3>
+      <p>Certificados oficiales</p>
+    </div>
+    <div class="stat">
+      <i class="fas fa-users"></i>
+      <h3 id="stat-alumnos">10K+</h3>
+      <p>Estudiantes activos</p>
+    </div>
+  </section>
+
+  <script>
+    // Opcional: carga números reales desde localStorage (del admin)
+    document.addEventListener('DOMContentLoaded', () => {
+      const cursos = JSON.parse(localStorage.getItem('eduPlatform_cursos')) || [];
+      const profesores = JSON.parse(localStorage.getItem('eduPlatform_profesores')) || [];
+      
+      if (cursos.length > 0) {
+        document.getElementById('total-cursos').textContent = cursos.length;
+        document.getElementById('stat-cursos').textContent = cursos.length + '+';
+      }
+      if (profesores.length > 0) {
+        document.getElementById('total-profesores').textContent = profesores.length;
+        document.getElementById('stat-profes').textContent = profesores.length + '+';
+      }
+    });
+  </script>
 </body>
 </html>
