@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalEstudiantes = 0;
   
     cursos.forEach(curso => {
-      const modulos = curso.modulos?.length || 0;
-      const lecciones = curso.modulos?.reduce((acc, m) => acc + (m.lecciones?.length || 0), 0) || 0;
-      const horas = curso.intensidadHoraria || Math.round(lecciones * 2.5); // estimado realista
+      const modulos = curso.modulos?.length || 4;
+      const lecciones = curso.modulos?.reduce((acc, m) => acc + (m.lecciones?.length || 25), 25) || 25;
+      const horas = curso.intensidadHoraria || Math.round(lecciones * 2.5);
       const profesor = profesores.find(p => p.cursos?.includes(curso.id));
       const estudiantesCount = curso.estudiantes?.length || 0;
   
