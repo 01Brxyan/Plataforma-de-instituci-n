@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificaciones | Profesor - ABCPlatform</title>
+  <link rel="stylesheet" href="../css/calificaciones.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h2>ABC<span>Platform</span></h2>
+    </div>
+
+    <nav class="menu">
+      <a href="homeprofesor.html" class="menu-item">
+        <i class="fas fa-home"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="miscursosprofesor.html" class="menu-item">
+        <i class="fas fa-book-open"></i>
+        <span>Mis Cursos</span>
+      </a>
+      <a href="misestudiantes.html" class="menu-item">
+        <i class="fas fa-users"></i>
+        <span>Mis Estudiantes</span>
+      </a>
+      <a href="calificaciones.html" class="menu-item active">
+        <i class="fas fa-chart-line"></i>
+        <span>Calificaciones</span>
+      </a>
+      <a href="materiales.html" class="menu-item">
+        <i class="fas fa-folder-open"></i>
+        <span>Materiales</span>
+      </a>
+    </nav>
+
+    <button onclick="cerrarSesion()" class="btn-salir">
+      <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+    </button>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-content">
+    <header class="header">
+      <div>
+        <h1>Calificaciones</h1>
+        <p>Revisa y gestiona las notas de tus estudiantes</p>
+      </div>
+      <img src="" alt="Foto del profesor" class="avatar" id="foto-profesor">
+    </header>
+
+    <!-- FILTROS -->
+    <div class="controls">
+      <select id="select-curso" class="select-curso">
+        <option value="">Seleccionar curso</option>
+      </select>
+      <select id="select-tarea" class="select-tarea">
+        <option value="">Todas lasión</option>
+      </select>
+      <button id="btn-exportar" class="btn-export">
+        <i class="fas fa-download"></i> Exportar Excel
+      </button>
+    </div>
+
+    <!-- TABLA DE CALIFICACIONES -->
+    <div class="tabla-container">
+      <table id="tabla-calificaciones">
+        <thead>
+          <tr>
+            <th>Estudiante</th>
+            <th>Correo</th>
+            <th>Curso</th>
+            <th>Tarea / Actividad</th>
+            <th>Nota</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Se llena con JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="sin-datos" class="no-data">
+      <i class="fas fa-clipboard-list"></i>
+      <p>Selecciona un curso para ver las calificaciones</p>
+    </div>
+  </div>
+
+  <script src="../js/calificaciones.js"></script>
+</body>
+</html>

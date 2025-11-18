@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Cursos | Profesor - ABCPlatform</title>
+  <link rel="stylesheet" href="../css/miscursosprofesor.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h2>ABC<span>Platform</span></h2>
+    </div>
+
+    <nav class="menu">
+      <a href="homeprofesor.html" class="menu-item">
+        <i class="fas fa-home"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="miscursosprofesor.html" class="menu-item active">
+        <i class="fas fa-book-open"></i>
+        <span>Mis Cursos</span>
+      </a>
+      <a href="misestudiantes.html" class="menu-item">
+        <i class="fas fa-users"></i>
+        <span>Mis Estudiantes</span>
+      </a>
+      <a href="calificaciones.html" class="menu-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Calificaciones</span>
+      </a>
+      <a href="materiales.html" class="menu-item">
+        <i class="fas fa-folder-open"></i>
+        <span>Materiales</span>
+      </a>
+    </nav>
+
+    <button onclick="cerrarSesion()" class="btn-salir">
+      <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+    </button>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="main-content">
+    <header class="header">
+      <div>
+        <h1>Mis Cursos</h1>
+        <p>Administra tus cursos y el progreso de tus estudiantes</p>
+      </div>
+      <img src="" alt="Foto del profesor" class="avatar" id="foto-profesor">
+    </header>
+
+    <!-- FILTROS Y BUSCADOR -->
+    <div class="controls">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="buscador" placeholder="Buscar curso...">
+      </div>
+      <select id="filtro-estado">
+        <option value="todos">Todos los cursos</option>
+        <option value="activo">Activos</option>
+        <option value="finalizado">Finalizados</option>
+      </select>
+    </div>
+
+    <!-- GRID DE CURSOS -->
+    <div id="lista-cursos" class="cursos-grid">
+      <!-- Se carga con JS -->
+    </div>
+  </div>
+
+  <script src="../js/miscursosprofesor.js"></script>
+</body>
+</html>

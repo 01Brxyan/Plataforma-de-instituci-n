@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materiales | Profesor - ABCPlatform</title>
+  <link rel="stylesheet" href="../css/materiales.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h2>ABC<span>Platform</span></h2>
+    </div>
+
+    <nav class="menu">
+      <a href="homeprofesor.html" class="menu-item">
+        <i class="fas fa-home"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="miscursosprofesor.html" class="menu-item">
+        <i class="fas fa-book-open"></i>
+        <span>Mis Cursos</span>
+      </a>
+      <a href="misestudiantes.html" class="menu-item">
+        <i class="fas fa-users"></i>
+        <span>Mis Estudiantes</span>
+      </a>
+      <a href="calificaciones.html" class="menu-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Calificaciones</span>
+      </a>
+      <a href="materiales.html" class="menu-item active">
+        <i class="fas fa-folder-open"></i>
+        <span>Materiales</span>
+      </a>
+    </nav>
+
+    <button onclick="cerrarSesion()" class="btn-salir">
+      <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+    </button>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-content">
+    <header class="header">
+      <div>
+        <h1>Materiales de Clase</h1>
+        <p>Sube, organiza y comparte recursos con tus estudiantes</p>
+      </div>
+      <img src="" alt="Foto del profesor" class="avatar" id="foto-profesor">
+    </header>
+
+    <!-- FILTROS Y BOTÓN SUBIR -->
+    <div class="controls">
+      <select id="select-curso">
+        <option value="">Todos los cursos</option>
+      </select>
+
+      <label class="btn-subir" for="input-file">
+        <i class="fas fa-cloud-upload-alt"></i> Subir Material
+      </label>
+      <input type="file" id="input-file" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.png,.mp4,.zip" style="display:none;">
+    </div>
+
+    <!-- GRID DE MATERIALES -->
+    <div id="materiales-grid" class="materiales-grid">
+      <!-- Se carga con JS -->
+    </div>
+
+    <div id="sin-materiales" class="no-data">
+      <i class="fas fa-folder-open"></i>
+      <p>Aún no has subido materiales. ¡Comienza ahora!</p>
+    </div>
+  </div>
+
+  <script src="../js/materiales.js"></script>
+</body>
+</html>

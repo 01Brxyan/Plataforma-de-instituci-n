@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte Resumen de Cursos - ABCPlatform</title>
+  <link rel="stylesheet" href="../css/reporte.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ABCPlatform</h1>
+      <p class="subtitle">Sistema de Gestión del Aprendizaje - LMS</p>
+    </header>
+
+    <div class="info">
+      <h2>Reporte Resumen de Cursos</h2>
+      <p>Generado automáticamente el <span id="fecha-actual"></span></p>
+      <p>Total de cursos registrados: <strong id="total-cursos">0</strong></p>
+    </div>
+
+    <table id="tabla-reporte">
+      <thead>
+        <tr>
+          <th>Curso</th>
+          <th>Módulos</th>
+          <th>Lecciones</th>
+          <th>Intensidad Horaria</th>
+          <th>Profesor</th>
+          <th>Estudiantes Inscritos</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-tabla">
+        <!-- JS lo llena -->
+      </tbody>
+    </table>
+
+    <div id="sin-cursos" class="no-data">
+      <i class="fas fa-book-open"></i>
+      <p>No se encontraron cursos registrados en la plataforma.</p>
+    </div>
+
+    <footer>
+      <p>Examen #1 - Desarrollo de LMS | Introducción a Python / Desarrollo Web</p>
+      <p>© 2025 ABCPlatform - Todos los derechos reservados</p>
+    </footer>
+  </div>
+
+  <script src="../js/reporte.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profesor | ABCPlatform</title>
+  <link rel="stylesheet" href="../css/homeprofesor.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h2>ABC<span>Platform</span></h2>
+    </div>
+
+    <nav class="menu">
+      <a href="homeprofesor.html" class="menu-item active">
+        <i class="fas fa-home"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="miscursosprofesor.html" class="menu-item">
+        <i class="fas fa-book-open"></i>
+        <span>Mis Cursos</span>
+      </a>
+      <a href="misestudiantes.html" class="menu-item">
+        <i class="fas fa-users"></i>
+        <span>Mis Estudiantes</span>
+      </a>
+      <a href="calificaciones.html" class="menu-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Calificaciones</span>
+      </a>
+      <a href="materiales.html" class="menu-item">
+        <i class="fas fa-folder-open"></i>
+        <span>Materiales</span>
+      </a>
+    </nav>
+
+    <button onclick="cerrarSesion()" class="btn-salir">
+      <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+    </button>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-content">
+    <header class="header">
+      <div>
+        <h1>¡Hola, <span id="nombre-profesor">Profesor</span>!</h1>
+        <p>Bienvenido de vuelta a tu panel de control</p>
+      </div>
+      <img src="" alt="Foto del profesor" class="avatar" id="foto-profesor">
+    </header>
+
+    <!-- ESTADÍSTICAS RÁPIDAS -->
+    <div class="quick-stats">
+      <div class="stat">
+        <i class="fas fa-book-open"></i>
+        <div>
+          <h3 id="total-cursos">0</h3>
+          <small>Cursos Activos</small>
+        </div>
+      </div>
+
+      <div class="stat">
+        <i class="fas fa-users"></i>
+        <div>
+          <h3 id="total-estudiantes">0</h3>
+          <small>Estudiantes Totales</small>
+        </div>
+      </div>
+
+      <div class="stat">
+        <i class="fas fa-tasks"></i>
+        <div>
+          <h3 id="tareas-pendientes">12</h3>
+          <small>Tareas por Calificar</small>
+        </div>
+      </div>
+
+      <div class="stat">
+        <i class="fas fa-trophy"></i>
+        <div>
+          <h3 id="promedio-general">89%</h3>
+          <small>Promedio General</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- CURSOS RECIENTES -->
+    <section class="section">
+      <h2>Mis Cursos Recientes</h2>
+      <div id="cursos-recientes" class="cursos-grid">
+        <p class="no-data">No tienes cursos asignados aún.</p>
+      </div>
+    </section>
+
+    <!-- ACTIVIDAD RECIENTE -->
+    <section class="section">
+      <h2>Actividad Reciente</h2>
+      <div class="actividad">
+        <div class="actividad-item">
+          <i class="fas fa-user-plus"></i>
+          <div>
+            <p><strong>Juan Pérez</strong> se unió a <strong>Matemáticas Avanzadas</strong></p>
+            <small>Hace 2 horas</small>
+          </div>
+        </div>
+        <div class="actividad-item">
+          <i class="fas fa-file-alt"></i>
+          <div>
+            <p><strong>María Gómez</strong> entregó la tarea <strong>Proyecto Final</strong></p>
+            <small>Hace 5 horas</small>
+          </div>
+        </div>
+        <div class="actividad-item">
+          <i class="fas fa-star"></i>
+          <div>
+            <p>Calificaste la tarea de <strong>Carlos Ruiz</strong> con <strong>95/100</strong></p>
+            <small>Hace 1 día</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="../js/homeprofesor.js"></script>
+</body>
+</html>

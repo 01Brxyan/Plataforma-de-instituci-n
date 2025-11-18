@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Estudiantes | Profesor - ABCPlatform</title>
+  <link rel="stylesheet" href="../css/misestudiantes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h2>ABC<span>Platform</span></h2>
+    </div>
+
+    <nav class="menu">
+      <a href="homeprofesor.html" class="menu-item">
+        <i class="fas fa-home"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="miscursosprofesor.html" class="menu-item">
+        <i class="fas fa-book-open"></i>
+        <span>Mis Cursos</span>
+      </a>
+      <a href="misestudiantes.html" class="menu-item active">
+        <i class="fas fa-users"></i>
+        <span>Mis Estudiantes</span>
+      </a>
+      <a href="calificaciones.html" class="menu-item">
+        <i class="fas fa-chart-line"></i>
+        <span>Calificaciones</span>
+      </a>
+      <a href="materiales.html" class="menu-item">
+        <i class="fas fa-folder-open"></i>
+        <span>Materiales</span>
+      </a>
+    </nav>
+
+    <button onclick="cerrarSesion()" class="btn-salir">
+      <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+    </button>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-content">
+    <header class="header">
+      <div>
+        <h1>Mis Estudiantes</h1>
+        <p>Administra y revisa el progreso de todos tus alumnos</p>
+      </div>
+      <img src="" alt="Foto del profesor" class="avatar" id="foto-profesor">
+    </header>
+
+    <!-- CONTROLES -->
+    <div class="controls">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="buscador" placeholder="Buscar estudiante por nombre o correo...">
+      </div>
+      <select id="filtro-curso">
+        <option value="">Todos mis cursos</option>
+        <!-- Se llena con JS -->
+      </select>
+    </div>
+
+    <!-- ESTADÍSTICAS RÁPIDAS -->
+    <div class="quick-stats">
+      <div class="stat">
+        <i class="fas fa-users"></i>
+        <div>
+          <h3 id="total-estudiantes">0</h3>
+          <small>Estudiantes Totales</small>
+        </div>
+      </div>
+      <div class="stat">
+        <i class="fas fa-user-check"></i>
+        <div>
+          <h3 id="activos-hoy">0</h3>
+          <small>Activos Hoy</small>
+        </div>
+      </div>
+      <div class="stat">
+        <i class="fas fa-star"></i>
+        <div>
+          <h3 id="promedio-general">0%</h3>
+          <small>Promedio General</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID DE ESTUDIANTES -->
+    <div id="lista-estudiantes" class="estudiantes-grid">
+      <!-- Se carga con JS -->
+    </div>
+  </div>
+
+  <script src="../js/misestudiantes.js"></script>
+</body>
+</html>

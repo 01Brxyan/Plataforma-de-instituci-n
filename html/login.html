@@ -13,33 +13,40 @@
     <div class="login-card">
       <div class="logo">
         <i class="fas fa-graduation-cap"></i>
-        <h1>ABC<span></span></h1>
+        <h1>ABC<span>Platform</span></h1>
       </div>
 
       <h2>Bienvenido de vuelta</h2>
-      <p class="subtitle">Ingresa tus credenciales para continuar aprendiendo</p>
+      <p class="subtitle">Selecciona tu rol para continuar</p>
 
-      <!-- FORMULARIO CON ID EXACTO -->
-      <form id="form-login">
+      <!-- FORMULARIO ESTUDIANTE -->
+      <form id="form-estudiante">
         <div class="input-group">
           <i class="fas fa-envelope"></i>
-          <input type="email" id="email" placeholder="Correo electrónico" required autocomplete="email">
+          <input type="email" id="email-estudiante" placeholder="Correo electrónico" required autocomplete="email">
         </div>
 
         <div class="input-group">
           <i class="fas fa-lock"></i>
-          <input type="password" id="password" placeholder="Contraseña" required minlength="4">
-          <span class="toggle-password" onclick="togglePass()">
+          <input type="password" id="password-estudiante" placeholder="Contraseña" required minlength="4">
+          <span class="toggle-password" onclick="togglePass('password-estudiante', this)">
             <i class="fas fa-eye"></i>
           </span>
         </div>
 
         <button type="submit" class="btn-login">
-          <span>Iniciar Sesión como Estudiante</span>
-          <i class="fas fa-arrow-right"></i>
+          <span>Iniciar como Estudiante</span>
+          <i class="fas fa-user-graduate"></i>
         </button>
       </form>
 
+      <!-- BOTÓN REPORTES -->
+      <button type="button" id="btn-profesor" class="btn-login" style="margin: 1rem 0; background: linear-gradient(135deg, #00D4FF, #5B3FFF);">
+        <span>Ver reportes<a href="html/login.html" class="btn btn-estudiante"></span>
+        <i class="fas fa-chalkboard-teacher"></i>
+      </button>
+
+      <!-- BOTÓN ADMIN -->
       <div class="divider"><span>o</span></div>
 
       <a href="loginadmin.html" class="btn-admin">
@@ -47,11 +54,10 @@
         Ingresar como Administrador
       </a>
 
-      <p class="footer-text">Plataforma educativa © 2025</p>
+      <p class="footer-text">Plataforma educativa © 2025 - Todos los derechos reservados</p>
     </div>
   </div>
 
-  <!-- SCRIPT CORRECTO -->
   <script src="../js/login.js"></script>
 </body>
 </html>

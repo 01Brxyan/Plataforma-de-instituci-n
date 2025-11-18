@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #5B3FFF;
+  --accent: #00D4FF;
+  --dark: #0F0F1A;
+  --card: #17172B;
+  --bg: #0A0A14;
+  --text: #E0E0FF;
+  --gray: #8892b0;
+  --gradient: linear-gradient(135deg, #5B3FFF, #00D4FF);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(91,63,255,0.3) 0%, transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(0,212,255,0.3) 0%, transparent 30%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(91,63,255,0.3);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+header { text-align: center; margin-bottom: 3rem; }
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--gray);
+  font-size: 1.2rem;
+}
+
+.info {
+  background: rgba(91,63,255,0.2);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 1px solid rgba(91,63,255,0.4);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(23,23,43,0.6);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+th {
+  background: var(--gradient);
+  color: white;
+  padding: 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+td {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+tr:hover {
+  background: rgba(91,63,255,0.2);
+}
+
+.total-row {
+  background: rgba(0,212,255,0.2);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.total-row td {
+  color: var(--accent);
+}
+
+.no-data {
+  text-align: center;
+  padding: 4rem;
+  color: var(--gray);
+  font-size: 1.4rem;
+}
+
+.no-data i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
