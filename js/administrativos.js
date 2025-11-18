@@ -1,4 +1,3 @@
-// js/administradores.js → Muestra los administradores creados en el panel de admin
 document.addEventListener('DOMContentLoaded', () => {
     // Usamos la misma clave que el panel de administrador: 'eduPlatform_administradores'
     const administradores = JSON.parse(localStorage.getItem('eduPlatform_administradores')) || [];

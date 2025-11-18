@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const estudiante = JSON.parse(localStorage.getItem('estudianteLogueado'));
 
-    // SI NO HAY SESIÓN DE ESTUDIANTE → SOLO MANDA AL LOGIN NORMAL, NADA MÁS
     if (!estudiante) {
         window.location.href = 'login.html'; 
         return;

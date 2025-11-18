@@ -1,22 +1,19 @@
-// administradores.js - PANEL ADMINISTRADOR COMPLETO Y CHIMBA 2025
-// Todo arreglado: pestañas funcionando al 100%, modal único, responsive, LocalStorage + ADMINISTRADORES
-
 const STORAGE_KEY = 'eduPlatform';
 const DB = {
   get(key) { return JSON.parse(localStorage.getItem(`${STORAGE_KEY}_${key}`)) || []; },
   set(key, data) { localStorage.setItem(`${STORAGE_KEY}_${key}`, JSON.stringify(data)); }
 };
 
-// === INICIO: CARGAR TODO ===
+//INICIO: CARGAR TODO
 document.addEventListener('DOMContentLoaded', () => {
   renderEstudiantes();
   renderProfesores();
   renderCursos();
   renderModulos();
-  renderAdministradores();        // ← NUEVO
+  renderAdministradores();
   cargarCursosEnSelects();
 
-  // === PESTAÑAS ARREGLADAS AL 100% ===
+  
   const tabs = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.tab-panel');
 
@@ -30,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// === ESTUDIANTES ===
+// Estudiantes
 function renderEstudiantes() {
   const estudiantes = DB.get('estudiantes');
   const list = document.getElementById('estudiantes-list');
@@ -82,7 +79,7 @@ document.getElementById('form-estudiante')?.addEventListener('submit', (e) => {
   cerrarModal();
 });
 
-// === PROFESORES ===
+// Profesores
 function renderProfesores() {
   const profesores = DB.get('profesores');
   const cursos = DB.get('cursos');
@@ -150,7 +147,7 @@ document.getElementById('form-profesor')?.addEventListener('submit', (e) => {
   cerrarModal();
 });
 
-// === CURSOS ===
+// Cursos
 function renderCursos() {
   const cursos = DB.get('cursos');
   const list = document.getElementById('cursos-list');
@@ -207,7 +204,7 @@ document.getElementById('form-curso')?.addEventListener('submit', (e) => {
   cerrarModal();
 });
 
-// === MÓDULOS ===
+// Modulos
 function renderModulos() {
   const modulos = DB.get('modulos');
   const cursos = DB.get('cursos');
@@ -264,7 +261,7 @@ document.getElementById('form-modulo')?.addEventListener('submit', (e) => {
   cerrarModal();
 });
 
-// === NUEVA SECCIÓN: ADMINISTRADORES ===
+// Administraciones
 function renderAdministradores() {
   const admins = DB.get('administradores');
   const list = document.getElementById('administradores-list');
@@ -316,7 +313,6 @@ document.getElementById('form-admin')?.addEventListener('submit', (e) => {
   cerrarModal();
 });
 
-// === FUNCIONES COMUNES ===
 function cargarCursosEnSelects() {
   const selects = ['cursos-profesor', 'curso-modulo'];
   selects.forEach(id => {

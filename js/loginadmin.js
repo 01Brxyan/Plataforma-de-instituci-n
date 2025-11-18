@@ -1,11 +1,10 @@
-// js/login-admin.js
 document.getElementById('form-admin').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const email = document.getElementById('email-admin').value.trim();
     const pass = document.getElementById('pass-admin').value;
 
-    // CREDENCIALES DEL ADMIN (puedes cambiarlas después)
+    // CREDENCIALES ADMIN
     const adminValido = {
         email: "a@gmail.com",
         password: "a"

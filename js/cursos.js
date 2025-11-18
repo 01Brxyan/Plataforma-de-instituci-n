@@ -1,4 +1,3 @@
-// js/cursos.js → Carga cursos del admin y abre detalle al hacer clic
 document.addEventListener('DOMContentLoaded', () => {
     // Verifica que el estudiante esté logueado (opcional, puedes quitar si quieres público)
     const estudiante = JSON.parse(localStorage.getItem('estudianteLogueado'));

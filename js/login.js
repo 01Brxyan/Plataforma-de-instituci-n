@@ -1,10 +1,8 @@
-// js/login.js → COMPLETO, CHIMBA Y QUE MANDA A homeestudiante.html AL INSTANTE
 const STORAGE_KEY = 'eduPlatform';
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form-login');
 
-    // SI NO ENCUENTRA EL FORMULARIO, TE LO DICE EN CONSOLA
     if (!form) {
         console.error('ERROR HIJUEPUTA: No se encontró el formulario con id="form-login"');
         return;
@@ -31,13 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const hashCorrecto = estudiante.passwordHash || btoa('123456');
         if (btoa(password) === hashCorrecto) {
-            // GUARDAMOS LA SESIÓN
             localStorage.setItem('estudianteLogueado', JSON.stringify(estudiante));
 
-            // MENSAJE CHIMBA
             alert(`¡Bienvenido de vuelta, ${estudiante.nombre} ${estudiante.apellido || ''}!`);
 
-            // AQUÍ TE MANDA AL HTML QUE TÚ QUIERES, SIN EXCUSAS
             window.location.href = 'homeestudiante.html';
         } else {
             alert('Contraseña incorrecta, hijueputa');
@@ -45,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// FUNCIÓN PARA MOSTRAR/OCULTAR CONTRASEÑA (POR SI LA TIENES)
 function togglePass() {
     const pass = document.getElementById('password');
     const icon = document.querySelector('.toggle-password i');

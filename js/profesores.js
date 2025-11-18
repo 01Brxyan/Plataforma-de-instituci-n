@@ -1,4 +1,3 @@
-// js/profesores.js → 100% LIMPIO, ENTRA DIRECTO, NUNCA PIDE NADA
 document.addEventListener('DOMContentLoaded', () => {
     const profesores = JSON.parse(localStorage.getItem('eduPlatform_profesores')) || [];
     const lista = document.getElementById('lista-profesores');
